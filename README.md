@@ -1,6 +1,5 @@
 # bitcoin
 비트코인 자동매매 알고리즘입니다(빗썸)
-@@ -1,15 +1,15 @@
 import time
 from datetime import datetime
 import datetime
@@ -23,7 +22,6 @@ while True:
     print(now, "vs", mid)
     time.sleep(1)
  10  ch06/06_15.py 
-@@ -1,13 +1,13 @@
 import time
 from datetime import datetime
 import datetime
@@ -43,7 +41,6 @@ while True:
 
     time.sleep(1) 
   10  ch06/06_16.py 
-@@ -1,6 +1,6 @@
 import time
 import pybithumb
 from datetime import datetime
@@ -51,7 +48,7 @@ import datetime
 
 def get_target_price(ticker):
     df = pybithumb.get_ohlcv("BTC")
-@@ -12,15 +12,15 @@ def get_target_price(ticker):
+def get_target_price(ticker):
     target = today_open + (yesterday_high - yesterday_low) * 0.5
     return target
 
@@ -72,7 +69,6 @@ while True:
     current_price = pybithumb.get_current_price("BTC")
     print(current_price)
   10  ch06/06_17.py 
-@@ -1,6 +1,6 @@
 import time
 import pybithumb
 from datetime import datetime
@@ -80,7 +76,7 @@ import datetime
 
 con_key = "81dd5f25e5daa70b2fff603901d2c09c"
 sec_key = "82333efegeg9eg3e77c573weg34af17a"
-@@ -16,15 +16,15 @@ def get_target_price(ticker):
+def get_target_price(ticker):
     target = today_open + (yesterday_high - yesterday_low) * 0.5
     return target
 
@@ -100,8 +96,6 @@ while True:
 
     current_price = pybithumb.get_current_price("BTC")
     if current_price > target_price:
-  12  ch06/06_18.py 
-@@ -1,6 +1,6 @@
 import time
 import pybithumb
 from datetime import datetime
@@ -109,7 +103,7 @@ import datetime
 
 con_key = "81dd5f25e5daa70b2fff603901d2c09c"
 sec_key = "82333efegeg9eg3e77c573weg34af17a"
-@@ -27,19 +27,19 @@ def sell_crypto_currency(ticker):
+def sell_crypto_currency(ticker):
     unit = bithumb.get_balance(ticker)[0]
     bithumb.sell_market_order(ticker, unit)
 
@@ -134,8 +128,6 @@ while True:
 
     time.sleep(1) 
     time.sleep(1)
-  10  ch06/06_19.py 
-@@ -1,6 +1,6 @@
 import time
 import pybithumb
 from datetime import datetime
@@ -143,7 +135,7 @@ import datetime
 
 with open("bithumb.txt") as f:
     lines = f.readlines()
-@@ -29,16 +29,16 @@ def sell_crypto_currency(ticker):
+def sell_crypto_currency(ticker):
     unit = bithumb.get_balance(ticker)[0]
     bithumb.sell_market_order(ticker, unit)
 
@@ -164,8 +156,6 @@ while True:
             sell_crypto_currency("BTC")
 
         current_price = pybithumb.get_current_price("BTC")
-  10  ch06/06_20.py 
-@@ -1,6 +1,6 @@
 import time
 import pybithumb
 from datetime import datetime
@@ -173,7 +163,7 @@ import datetime
 
 with open("bithumb.txt") as f:
     lines = f.readlines()
-@@ -35,17 +35,17 @@ def get_yesterday_ma5(ticker):
+def get_yesterday_ma5(ticker):
     ma = close.rolling(5).mean()
     return ma[-2]
 
