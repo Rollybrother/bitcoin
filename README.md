@@ -21,7 +21,6 @@ while True:
 
     print(now, "vs", mid)
     time.sleep(1)
- 10  ch06/06_15.py 
 import time
 from datetime import datetime
 import datetime
@@ -40,7 +39,6 @@ while True:
         mid = datetime.datetime(now.year, now.month, now.day) + datetime.timedelta(1)
 
     time.sleep(1) 
-  10  ch06/06_16.py 
 import time
 import pybithumb
 from datetime import datetime
@@ -68,7 +66,6 @@ while True:
 
     current_price = pybithumb.get_current_price("BTC")
     print(current_price)
-  10  ch06/06_17.py 
 import time
 import pybithumb
 from datetime import datetime
